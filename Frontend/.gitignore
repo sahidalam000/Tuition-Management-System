@@ -7,12 +7,28 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependencies
+node_modules/
+Backend/node_modules/
+Frontend/node_modules/
 
-# Editor directories and files
+# Environment files
+.env
+.env.local
+.env.production
+Backend/.env
+Frontend/.env
+
+# Upload folders
+uploads/
+Backend/uploads/
+
+# Build folders
+build/
+dist/
+dist-ssr/
+
+# Editor files
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -23,20 +39,13 @@ dist-ssr
 *.sln
 *.sw?
 
-# Environment files
-.env
-.env.local
-.env.production
 
-# Upload folders (local uploads)
-uploads/
-backend/uploads/
-
-# Build folders
-build/
 
 # OS files
 Thumbs.db
 
+
+
 # Cache
 .cache/
+
