@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+*{
+  font-family: Saira, sans-serif;
+}
+
+
+:root {
+  --color-dark-100: #1a1a1a;
+  --color-dark-200: #1f1f1f;
+  --color-dark-300: #2d2d2d;
+  --color-dark-400: #3d3d3d;
+  --color-purple: #8B5CF6;
+  --color-pink: #EC4899;
+  --color-blue: #3B82F6;
+}
+
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid #8B5CF6; /* The typewriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  width: 0 ; /* Gives that scrolling effect as the typing happens */
+  animation:
+    typing 3s steps(20, end) forwards,
+    blink-caret 0.75s step-end 4;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 15ch; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #8B5CF6; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 15s linear infinite;
+}
+
+
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease;
+}
+
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-shake {
+  animation: shake 0.3s;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #020617;
+  overflow-x: hidden;
+}
+
