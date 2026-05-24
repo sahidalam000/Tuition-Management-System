@@ -1,6 +1,9 @@
-# 🎓 Bright Future Tutoring System
+# 🎓 Bright Future Tutoring 
 
-A full-stack MERN based tuition management platform built for managing student enrollments, Student Info, fees, study materials, schedules, and academic performance.
+A full-stack MERN based tuition management platform built for managing student enrollments, admin approval, subject dashboards, class resources that student info, fees, study materials, schedules, academic performance and secure authentication.
+
+🌐 **Live Website:**  
+https://brightfuturetutoring.vercel.app
 
 ---
 
@@ -8,19 +11,19 @@ A full-stack MERN based tuition management platform built for managing student e
 
 The system supports:
 
-✅ Student Registration & Login  
+✅ Student Signup & Login Authentication
 ✅ JWT Authentication  
-✅ Role-based Access (Admin / Student)  
 ✅ Course Enrollment Approval System  
-✅ Mathematics & Science Courses  
+✅ Mathematics & Science Courses with Dashboards
+✅ Dashboard Sidebar Persistence
+✅ Student Info that View Assigned Class Information
 ✅ Dynamic Fees Management  
 ✅ Combo Discount System  
 ✅ Study Materials Upload (PDF)  
 ✅ Locked Materials with Secret Code  
+✅ Students Access Study Materials
 ✅ Exam Schedule Management  
 ✅ Performance & Marks Tracking  
-✅ Student Info - Join date, Due date, Next due, Overdue
-✅ Student Dashboard  
 ✅ Contact Form  
 ✅ Responsive UI  
 ✅ Cloudinary Uploads  
@@ -32,10 +35,12 @@ The system supports:
 
 Bright Future was developed to simplify tuition management by allowing teachers/admins to:
 
+- Secure Admin Login
 - Manage enrollments
+- View Pending Requests
 - Update Last paid fees
 - Upload notes & papers
-- Track performance
+- Add/Edit Performance Data
 - Handle fee structures
 - Schedule exams
 - Approve students
@@ -64,8 +69,8 @@ Bright Future was developed to simplify tuition management by allowing teachers/
 
 ## Database
 
-- MongoDB
-- Mongoose
+- MongoDB Atlas
+  
 
 ## Deployment
 
@@ -78,6 +83,8 @@ Database → MongoDB Atlas
 Storage → Cloudinary
 
 ---
+
+
 
 # 📂 Folder Structure
 
@@ -304,7 +311,7 @@ CLOUDINARY_API_SECRET=
 ## Clone repository
 
 ```bash
-git clone REPO_URL
+git clone https://github.com/sahidalam000/Tuition-Management-System.git
 ```
 
 ---
@@ -364,61 +371,25 @@ PUT /api/admin/add-material
 DELETE /api/admin/delete-material
 ```
 
----
-
-# Screenshots
-
-Add screenshots here after deployment.
-
-Example:
-
-```md
-![Home](image-link)
-
-![Dashboard](image-link)
-```
 
 ---
 
-# Future Improvements
+# 👨‍💻 Developed By
 
-Planned:
+**Sahid Alam**
 
-- Online Payment Gateway
-- Attendance Tracking
-- Notification System
-- Live Classes
-- AI Tutor
-- Parent Dashboard
-
----
-
-# Author
-
-## Sahid Alam
-
-Full Stack Developer (MERN)
-
-Skills:
-
-```txt
-React.js
-Next.js
-MongoDB
-Node.js
-Express.js
-TailwindCSS
-JWT
-Cloudinary
-```
+B.Tech (CSE)  
+Full Stack Developer 
 
 GitHub:
 
-(Add after creating profile repo links)
+https://github.com/sahidalam000
 
-LinkedIn:
+---
 
-(Add profile)
+# ⭐ Support
+
+If you like this project, consider giving it a star ⭐
 
 ---
 
