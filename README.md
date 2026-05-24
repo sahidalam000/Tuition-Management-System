@@ -260,22 +260,6 @@ Students must enter code before access.
 
 ---
 
-# 💰 Combo Discount System
-
-Implemented:
-
-Example:
-
-```txt
-Math = ₹700
-
-Science = ₹500
-
-Combo Discount Applied
-
-Final Science Fee = ₹400
-```
-
 ---
 
 # ☁️ Cloudinary Integration
@@ -337,40 +321,6 @@ npm install
 
 npm run dev
 ```
-
----
-
-# API Examples
-
-Authentication:
-
-```txt
-POST /api/auth/signup
-POST /api/auth/login
-```
-
-Enrollment:
-
-```txt
-POST /api/enrollment/request
-GET /api/enrollment/my-enrollments
-```
-
-Fees:
-
-```txt
-POST /api/fees/save
-GET /api/fees/all
-DELETE /api/fees/delete/:id
-```
-
-Materials:
-
-```txt
-PUT /api/admin/add-material
-DELETE /api/admin/delete-material
-```
-
 
 ---
 
