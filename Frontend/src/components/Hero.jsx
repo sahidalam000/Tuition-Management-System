@@ -79,7 +79,16 @@ const Hero = () => {
         </motion.p>
 
         {/* ✅ HEADING (ONE TIME TYPING) */}
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-5 leading-tight">
+        <h1 className="text-4xl
+sm:text-5xl
+md:text-6xl
+font-bold
+text-white
+mb-5
+leading-tight
+max-w-[320px]
+sm:max-w-[700px]
+mx-auto">
           {headingText}
         </h1>
 
