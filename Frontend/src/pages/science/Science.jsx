@@ -15,7 +15,17 @@ const Science = () => {
   const [selectedClass, setSelectedClass] = useState(null)
   const [enteredCode, setEnteredCode] = useState("")
 
-  const [mobileMenu, setMobileMenu] = useState(false)
+  const [mobileMenu, setMobileMenu] =
+useState(
+
+localStorage.getItem(
+"scienceMobileMenu"
+)
+
+=== "true"
+
+)
+
   const [students,setStudents] =
   useState([])
 
@@ -327,7 +337,21 @@ const handleVerifyCode = () => {
       {mobileMenu && window.innerWidth < 768 && (
         <div className="fixed inset-0 z-50 flex">
 
-          <div className="flex-1 bg-black/60" onClick={() => setMobileMenu(false)}></div>
+          <div
+className="flex-1 bg-black/60"
+
+onClick={() => {
+
+setMobileMenu(false)
+
+localStorage.setItem(
+"scienceMobileMenu",
+"false"
+)
+
+}}
+
+></div>
 
           <div className="w-[260px] bg-[#0B1220] p-5 flex flex-col justify-between animate-slideIn">
 
@@ -335,7 +359,24 @@ const handleVerifyCode = () => {
 
               <div className="flex justify-between items-center">
                 <h2 className="text-lg font-semibold">Menu</h2>
-                <button onClick={() => setMobileMenu(false)}>✕</button>
+                <button
+
+onClick={() => {
+
+setMobileMenu(false)
+
+localStorage.setItem(
+"scienceMobileMenu",
+"false"
+)
+
+}}
+
+>
+
+✕
+
+</button>
               </div>
 
               <button className="text-left text-gray-300 hover:text-white">
@@ -359,19 +400,35 @@ const handleVerifyCode = () => {
 
                       <button
                         onClick={() => {
-                          setMobileMenu(false)
-                          navigate(`/science/class/${cls}/info`)
-                        }}
+
+localStorage.setItem(
+"scienceMobileMenu",
+"true"
+)
+
+navigate(
+`/science/class/${cls}/info`
+)
+
+}}
                         className="text-left text-gray-300 hover:text-white"
                       >
                         📊 <span>Class Info</span>
                       </button>
 
                       <button
-                        onClick={() => {
-                          setMobileMenu(false)
-                          navigate(`/science/class/${cls}/performance`)
-                        }}
+                       onClick={() => {
+
+localStorage.setItem(
+"scienceMobileMenu",
+"true"
+)
+
+navigate(
+`/science/class/${cls}/performance`
+)
+
+}}
                         className="text-left text-gray-300 hover:text-white"
                       >
                         🏆 <span>Performance</span>
@@ -379,9 +436,17 @@ const handleVerifyCode = () => {
 
                       <button
                         onClick={() => {
-                          setMobileMenu(false)
-                          navigate(`/science/class/${cls}/material`)
-                        }}
+
+localStorage.setItem(
+"scienceMobileMenu",
+"true"
+)
+
+navigate(
+`/science/class/${cls}/material`
+)
+
+}}
                         className="text-left text-gray-300 hover:text-white"
                       >
                         📄 <span>Study Material</span>
@@ -389,19 +454,35 @@ const handleVerifyCode = () => {
 
                       <button
                         onClick={() => {
-                          setMobileMenu(false)
-                          navigate(`/science/class/${cls}/schedule`)
-                        }}
+
+localStorage.setItem(
+"scienceMobileMenu",
+"true"
+)
+
+navigate(
+`/science/class/${cls}/schedule`
+)
+
+}}
                         className="text-left text-gray-300 hover:text-white"
                       >
                         📅 <span>Schedule</span>
                       </button>
 
                       <button
-                        onClick={() => {
-                          setMobileMenu(false)
-                          navigate(`/science/class/${cls}/fees`)
-                        }}
+                       onClick={() => {
+
+localStorage.setItem(
+"scienceMobileMenu",
+"true"
+)
+
+navigate(
+`/science/class/${cls}/fees`
+)
+
+}}
                         className="text-left text-gray-300 hover:text-white"
                       >
                         💰 <span>Fees</span>
