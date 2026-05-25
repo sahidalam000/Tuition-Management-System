@@ -15,6 +15,7 @@ import {
   addMarks,
   addMaterial,
   deleteMaterial,
+  deleteMarks
 } from "../controllers/adminController.js";
 
 
@@ -108,6 +109,17 @@ protect,
 adminOnly,
 
 deleteMaterial
+
+)
+
+router.delete(
+
+"/delete-marks/:studentId/:testIndex",
+
+protect,
+adminOnly,
+
+deleteMarks
 
 )
 

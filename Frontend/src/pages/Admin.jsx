@@ -586,28 +586,47 @@ const handleEditMarks = (course, studentId, testIndex, newMarks) => {
   toast.success("Marks Updated ✏️")
 }
 
-const handleDeleteMarks = (course, studentId, testIndex) => {
+const handleDeleteMarks =
+async(studentId,testIndex)=>{
 
-  const studentsDB = JSON.parse(localStorage.getItem("students")) || {}
+try{
 
-  studentsDB[course] = studentsDB[course].map((student) => {
+const token =
+localStorage.getItem(
+"token"
+)
 
-    if (student.id !== studentId) return student
+await API.delete(
 
-    const updatedMarks = (student.marks || []).filter(
-      (_, index) => index !== testIndex
-    )
+`/admin/delete-marks/${studentId}/${testIndex}`,
 
-    return {
-      ...student,
-      marks: updatedMarks
-    }
-  })
+{
 
-  localStorage.setItem("students", JSON.stringify(studentsDB))
-  setStudentsData(studentsDB)
+headers:{
+Authorization:
+`Bearer ${token}`
+}
 
-  toast.success("Marks Deleted 🗑️")
+}
+
+)
+
+toast.success(
+"Marks Deleted 🗑️"
+)
+
+fetchApprovedStudents()
+
+}catch(err){
+
+console.log(err)
+
+toast.error(
+"Delete failed"
+)
+
+}
+
 }
 
 // ==============================
@@ -1847,8 +1866,11 @@ performanceClass
 
           <button
             onClick={() =>
-              handleDeleteMarks(course, student._id, index)
-            }
+handleDeleteMarks(
+student._id,
+index
+)
+}
             className="bg-red-500 px-2 py-1 rounded text-xs"
           >
             Delete

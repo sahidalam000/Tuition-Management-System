@@ -597,3 +597,74 @@ err.message
 }
 
 }
+
+
+export const deleteMarks =
+async(req,res)=>{
+
+try{
+
+const {
+studentId,
+testIndex
+}
+=
+req.params
+
+const user =
+await User.findById(
+studentId
+)
+
+if(!user){
+
+return res.status(404)
+.json({
+
+message:
+"User not found"
+
+})
+
+}
+
+user.enrolledCourses.forEach(
+
+course=>{
+
+course.marks =
+course.marks.filter(
+
+(_,index)=>
+
+index !==
+Number(testIndex)
+
+)
+
+}
+
+)
+
+await user.save()
+
+res.json({
+
+message:
+"Marks Deleted"
+
+})
+
+}catch(err){
+
+res.status(500)
+.json({
+
+message:
+err.message
+
+})
+
+}
+
+}
