@@ -21,6 +21,9 @@ const Courses = () => {
   
   const [enrollments, setEnrollments] = useState([])
 
+  const [loading, setLoading] =
+useState(false)
+
   
   // 🔥 TYPEWRITER
   const [headingText, setHeadingText] = useState('')
@@ -155,9 +158,21 @@ const isPending = (course) => {
       return
     }
 
+    setLoading(true)
+
     const formData = new FormData(e.target)
     
     const file = formData.get("image")
+
+if (file.size > 2 * 1024 * 1024) {
+  setLoading(false)
+
+  toast.error(
+    "Please upload image below 2MB"
+  )
+
+  return
+}
 
     const reader = new FileReader()
 
@@ -195,8 +210,11 @@ const isPending = (course) => {
   setPreviewImage(null)
 
   setFileName("")
+  setLoading(false)
 
 } catch (error) {
+
+  setLoading(false)
 
   toast.error(
     error.response?.data?.message ||
@@ -489,9 +507,20 @@ Enroll Now
 
               </div>
 
-              <button className="bg-white text-black py-2 rounded-md font-medium">
-                Enroll
-              </button>
+              <button
+  disabled={loading}
+  className="bg-white text-black py-2 rounded-md font-medium"
+>
+
+{
+loading
+?
+"Submitting..."
+:
+"Enroll"
+}
+
+</button>
 
             </form>
 
