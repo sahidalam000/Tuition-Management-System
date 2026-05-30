@@ -292,13 +292,22 @@ Open PDF
 
 onClick={()=>{
 
+if(paper.isLocked){
+
+setSelectedPaper(paper)
+
+setShowCodeModal(true)
+
+}
+
+else{
+
 window.open(
-
 `${paper.pdf}?fl_attachment=${paper.originalFileName}`,
-
 "_blank"
-
 )
+
+}
 
 }}
 

@@ -102,6 +102,11 @@ String(
 classNumber
 )
 
+&&
+
+student.course === "math"
+
+
 )
 
 setMaterials(
@@ -207,15 +212,11 @@ md:items-center
 
 </p>
 
-<p className="text-xs text-gray-400">
-
-File:
-{paper.originalFileName ||
-"PDF"}
-
-</p>
-
-<p>
+<p className="text-gray-400
+text-sm
+mt-1
+break-words
+">
 
 {paper.chapters.join(", ")}
 
@@ -289,13 +290,22 @@ Open PDF
 
 onClick={()=>{
 
+if(paper.isLocked){
+
+setSelectedPaper(paper)
+
+setShowCodeModal(true)
+
+}
+
+else{
+
 window.open(
-
 `${paper.pdf}?fl_attachment=${paper.originalFileName}`,
-
 "_blank"
-
 )
+
+}
 
 }}
 
