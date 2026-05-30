@@ -198,19 +198,12 @@ classNumber
   // 🔥 TOP CARDS SUMMARY
   // =============================
 
-  const getEffectiveNextDue = (student) => {
+ const getEffectiveNextDue = (student) => {
+
   if (!student.joinDate) return null
 
   const today = new Date()
 
-  // 🔥 If paidTill exists → use it
-  if (student.paidTill) {
-    const next = new Date(student.paidTill)
-    next.setMonth(next.getMonth() + 1)
-    return next
-  }
-
-  // ❌ If not paid → use joinDate cycle
   let next = new Date(student.joinDate)
 
   while (next <= today) {
